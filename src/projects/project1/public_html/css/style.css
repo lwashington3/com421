@@ -1,0 +1,8 @@
+.bold {
+    font-weight: bold;
+}
+
+strong.emph {
+    font-weight: bold;
+    color: #191970
+}

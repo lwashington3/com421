@@ -1,10 +1,16 @@
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<title>Formatting Research Data</title>
-		<meta name="author" content="Len Washington III" />
+		<meta name="author" content="Len Washington III">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="/css/style.css">
+		<script src="/js/script.js"></script>
 	</head>
-	<body>
+	<body onload="addNav(false)">
 		<h1>How to organize and analyze research data</h1>
+		<nav class="top-level"></nav>
 		<aside>
 			For this lesson, you'll need the following:
 			<ul>
@@ -14,7 +20,7 @@
 			You should already be familiar with:
 			<ul>
 				<li>The basic functions and tools of Excel</li>
-				<li><strong>Descriptive statistics</strong> and <strong>inferential statistics</strong></li>
+				<li><strong class="emph">Descriptive statistics</strong> and <strong class="emph">inferential statistics</strong></li>
 				<li>Research design and how to identify independent variables and dependent variables</li>
 			</ul>
 		</aside>
@@ -27,7 +33,7 @@
 			<li>Run basic descriptive statistics in Excel</li>
 			<li>Prepare the document for statistical analysis in the software package PASW</li>
 		</ul>
-		<h1>Format data for analysis</h1>
+		<h2>Format data for analysis</h2>
 		<p>
 			Make sure the computer you are working on has Microsoft Excel installed.
 			Open the document <a href="/files/tutorial_spreadsheet.xlsx">ToolBox_DataLesson.xls</a> in Excel and follow along with the lesson, taking action as instructed.
@@ -35,7 +41,7 @@
 		</p>
 		<ol>
 			<li>Each variable name must be different from other variable names.</li>
-			<li>The first variable (in column A) is a <strong>unique identifier</strong>.</li>
+			<li>The first variable (in column A) is a <strong class="emph">unique identifier</strong>.</li>
 			<li>Variable names must start with a letter (not numbers or special characters), so change <code>4tutorial_types</code> to <code>tutorial_types</code>.</li>
 			<li>
 				Name variables so that they are intuitive to you.
@@ -67,7 +73,7 @@
 		</figure>
 		<p>
 			Replace categorical data values with "0" or "1" (0=no, 1=yes) to indicate whether or not the value is represented for the given subject/item.
-			This makes the categorical values <strong>dichotomous</strong>, which gives the researcher maximum flexibility in testing for relationships or correlations.
+			This makes the categorical values <strong class="emph">dichotomous</strong>, which gives the researcher maximum flexibility in testing for relationships or correlations.
 		</p>
 		<aside>
 			Dichotomous variables allow for the easy isolation of characteristics for analysis.
@@ -79,14 +85,14 @@
 				Rename this sheet Formatted_Data.
 			</li>
 			<li>
-				In the Formatted_Data sheet, add new columns with <b>Insert > Columns</b> for each distinct value in categorical data columns (<code>tutorial_types</code>, <code>gender</code>, <code>exp_level</code>, <code>task1</code>, <code>task1</code>, and <code>task3</code>).
+				In the Formatted_Data sheet, add new columns with <strong class="bold">Insert > Columns</strong> for each distinct value in categorical data columns (<code>tutorial_types</code>, <code>gender</code>, <code>exp_level</code>, <code>task1</code>, <code>task1</code>, and <code>task3</code>).
 				You do not have to add a new column for <code>task1</code>, <code>task1</code>, and <code>task3</code> because their values from the original column.
 			</li>
 			<li>
 				Rename columns according to each possible categorical value.
 				Copy and paste the values from the original column.
 			</li>
-			<li>Replace dichotomous data values with "0" or "1" (0=no, 1=yes) using the replace function: <b>Edit > Replace</b>.</li>
+			<li>Replace dichotomous data values with "0" or "1" (0=no, 1=yes) using the replace function: <strong class="bold">Edit > Replace</strong>.</li>
 			<li>Your Formatted_Data spreadsheet should now look like <a href="#replacements">Figure 3</a>.</li>
 		</ol>
 		<figure id="replacements">
@@ -95,7 +101,7 @@
 		</figure>
 		
 		
-		<h1>Run descriptive statistics</h1>
+		<h2>Run descriptive statistics</h2>
 		<aside>
 			Analyzing descriptive statistics may lead you to ask new questions.
 			For example, <code>perc_enjoy</code> is must higher on average that <code>perc_usefulness</code>, which also has a large variance.
@@ -103,14 +109,14 @@
 		</aside>
 		<p>
 			Run descriptive (summary) statistics on the dataset and output results in a new spreadsheet.
-			If necessary, rearrange columns so that data requiring summary, those with <strong>continuous</strong> values, are adjacent.
+			If necessary, rearrange columns so that data requiring summary, those with <strong class="emph">continuous</strong> values, are adjacent.
 			(In the spreadsheet, the continuous values of <i>perc_enjoy</i>, <i>perc_usefulness</i>, and <i>perc_ease_of_use</i> are already adjacent.)<br>
 			Write down the "input" (i.e. H2:J26) of the data requiring summary, making sure not to include variable labels.
 		</p>
 		<ol>
-			<li>Go to <b>Tools > Add-Ins...</b> and make sure <b>Analysis ToolPak</b> is checked. Click OK.</li>
-			<li>Go to <b>Tools > Data Analysis</b> select <b>Descriptive Statistics</b>. Click OK.</li>
-			<li>Enter the input range in the blank and check <b>Summary Statistics</b>. Click OK.</li>
+			<li>Go to <strong class="bold">Tools > Add-Ins...</strong> and make sure <strong class="bold">Analysis ToolPak</strong> is checked. Click OK.</li>
+			<li>Go to <strong class="bold">Tools > Data Analysis</strong> select <strong class="bold">Descriptive Statistics</strong>. Click OK.</li>
+			<li>Enter the input range in the blank and check <strong class="bold">Summary Statistics</strong>. Click OK.</li>
 		</ol>
 		<p>
 			The descriptive statistics summary will output in a new sheet.
@@ -126,7 +132,7 @@
 			<figcaption>EXCEL will not run descriptive statistics with non-numeric characters, so the variable labels must be re-entered.</figcaption>
 		</figure>
 		
-		<h1>Run inferential statistics</h1>
+		<h2>Run inferential statistics</h2>
 		<p>
 			Open PASW and upload the spreadsheet.
 			(IIT labs in Stuart Building, room 112, have PASW.
@@ -135,7 +141,7 @@
 		<ol>
 			<li>
 				When PASW starts, it will prompt you for a data source.
-				Select <b>Open an existing data source > More files...</b>
+				Select <strong class="bold">Open an existing data source > More files...</strong>
 			</li>
 			<li>Set the file type to Excel, then find and open the file.</li>
 			<li>
@@ -144,10 +150,10 @@
 				You should now see the dataset.
 			</li>
 		</ol>
-		<p>The most commonly used statistical methods and tests are found under the <b>Analyze</b> menu in the standard toolbar.</p>
+		<p>The most commonly used statistical methods and tests are found under the <strong class="bold">Analyze</strong> menu in the standard toolbar.</p>
 		<p>
 			<a href="#menu">Figure 5</a> shows where to find some common statistical methods and tests.
-			Under PASW's <b>Analyze</b> menu, see if you can also find the following:
+			Under PASW's <strong class="bold">Analyze</strong> menu, see if you can also find the following:
 		</p>
 		<ol>
 			<li>Wilcoxon-Mann-Whitney test</li>
@@ -165,14 +171,14 @@
 		<aside>Consult <a href="http://www.ats.ucla.edu/stat/mult_pkg/whatstat/default.htm">UCLA's Choosing the Correct Statistic</a> to ensure the statistical analysis is appropriate for you research question(s), variables of interest, and associated data types.</aside>
 		<p>
 			You should be determined that the Kruskal-Wallis one-way analysis of variance is the appropriate test.
-			Go to <b>Analyze > Nonparametric Tests > K Independent Samples...</b>
+			Go to <strong class="bold">Analyze > Nonparametric Tests > K Independent Samples...</strong>
 			A new window will open prompting you to select the variables (by column name) to be tested.
 		</p>
 		<ol>
 			<li>Select the <code>perc_usefulness</code> variable from the scrollable list on the left, and click the top arrow to move it to the Test Variable List (i.e. dependent variable).</li>
 			<li>Select the <code>free_play</code> variable from the scrollable list, and click the bottom arrow to move it to the Grouping Variable section (i.e. independent variable).</li>
 			<li>
-				Click <b>Define Range...</b>, and enter "0" in the Minimum field and "1" in the Maximum field.
+				Click <strong class="bold">Define Range...</strong>, and enter "0" in the Minimum field and "1" in the Maximum field.
 				This specifies the two categorical variables to be tested.
 				Your screen should now look like <a href="#samples">Figure 6</a>.
 				Click Continue.
@@ -184,5 +190,20 @@
 				For Kruskal-Wallis, an independent (free_play) and a dependent variable (perc_usefulness) are selected.
 			</figcaption>
 		</figure>
+		<p>
+			Click OK to display the statistical analysis results to new viewing window.
+			Your results screen should look like <a href="#export">Figure 7</a>.
+			Because statistical analysis output contains many numerical components (some of which must be cited in formal reports), it is a good idea to save it to a format independent of the PASW software.
+			To save the results, go to <strong class="bold">File > Export</strong>.
+			Change Document Type to the desired output format (Word, Excel, PDF, etc), then click OK.
+		</p>
+		<figure id="export">
+			<img src="/images/datalesson_fig7.png" alt="">
+			<figcaption>PASW allows users to export statistics to common document types.</figcaption>
+		</figure>
+		<h2>Test your knowledge</h2>
+		<p>
+			Now that you've finished the lesson, please complete a short quiz to test your understanding of formatting research datasets for comprehensive statistical analysis.
+		</p>
 	</body>
 </html>
