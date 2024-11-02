@@ -5,6 +5,7 @@ services:
         build: .
         image: com421/washington-sustainable-project
         ports: 
-            - "127.0.0.1:80:80"
+            - "80:80"
+#            - "127.0.0.1:80:80"
         volumes:
             - ./:/usr/src/app

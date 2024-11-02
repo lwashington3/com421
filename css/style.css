@@ -68,12 +68,24 @@ aside > p {
 .flip-box-front {
     background-color: #6b1112;
     color: white;
+    text-align: center;
+    align-content: center;
 }
 
 .flip-box-back {
-    background-color: dimgray;
     color: white;
     transform: rotateX(180deg);
+    font-size: xx-large;
+    text-align: center;
+    align-content: center;
+}
+
+.valid {
+    background-color: dimgray;
+}
+
+.invalid {
+    background-color: black;
 }
 
 .navbar {
@@ -104,3 +116,44 @@ aside > p {
 .nav-buttons button:hover {
     background-color: #3e8e41;
 }
+
+nav {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.main {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+}
+
+figure {
+    margin: 10px;
+    background-color: #6b1112;
+    width: fit-content;
+}
+
+
+@media screen and (max-width: 700px) {
+    nav {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    nav a {float: left;}
+    div.main {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+    nav a {
+        text-align: center;
+        float: none;
+    }
+}
+

@@ -1,10 +1,10 @@
 function addNav(published_only){
 	const menu = document.querySelector("nav.top-level");
 	const pages = {
-		"Home": ["/index.html", "fa-solid fa-house"],
+		"Home": ["/index.html", "fa-house"],
 		"Topic": null,
-		"Research": ["/realistic_research.html", ""],
-		"Data": ["/formatting_research_data.html", ""],
+		"Research": ["/realistic_research.html", "fa-book"],
+		"Data": ["/formatting_research_data.html", "fa-calculator"],
 		"References": null,
 		"Style": null,
 		"Layout": null,
@@ -19,10 +19,11 @@ function addNav(published_only){
 		const info = pages[page];
 		if(published_only && info == null){ continue; }
 		let url = "/placeholder.html";
-		let iconValue = "fa-solid fa-x";
-		if(info != null){
+		let iconValue = "fa-x";
+		let valid = info != null;
+		if(valid){
 			url = info[0];
-			iconValue = info[1];
+			iconValue = `fa-solid ${info[1]}`;
 		}
 		const link = document.createElement("a");
 		link.href = url; // Default page
@@ -43,7 +44,7 @@ function addNav(published_only){
 		text.innerHTML = page;
 
 		const back = document.createElement("div");
-		back.setAttribute("class", "flip-box-back");
+		back.classList.add("flip-box-back", valid ? "valid" : "invalid");
 
 		const icon = document.createElement("i");
 		icon.setAttribute("class", iconValue);
