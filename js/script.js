@@ -1,10 +1,10 @@
 function addNav(published_only){
 	const menu = document.querySelector("nav.top-level");
 	const pages = {
-		"Home": ["/index.html", "fa-house"],
+		"Home": ["./index.html", "fa-house"],
 		"Topic": null,
-		"Research": ["/realistic_research.html", "fa-book"],
-		"Data": ["/formatting_research_data.html", "fa-calculator"],
+		"Research": ["./realistic_research.html", "fa-book"],
+		"Data": ["./formatting_research_data.html", "fa-calculator"],
 		"References": null,
 		"Style": null,
 		"Layout": null,
@@ -18,7 +18,7 @@ function addNav(published_only){
 	for (const page in pages) {
 		const info = pages[page];
 		if(published_only && info == null){ continue; }
-		let url = "/placeholder.html";
+		let url = "./placeholder.html";
 		let iconValue = "fa-x";
 		let valid = info != null;
 		if(valid){
