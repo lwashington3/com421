@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Template Page</title>
+		<meta name="author" content="Len Washington III">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="./css/style.css">
+		<script src="https://kit.fontawesome.com/7a820cbbd6.js" crossorigin="anonymous"></script>
+		<script src="./js/script.js"></script>
+	</head>
+	<body onload="onLoad(false)">
+		<nav class="top-level"></nav>
+		<div class="main">
+			<h1>Template</h1>
+			
+			<p>Here is a template page, where developers can add new modules, as well as seeing the default formatting.</p>
+			
+			<h2 id="lists">Lists</h2>
+			<h3 id="ordered-lists">Ordered Lists</h3>
+			<ol>
+				<li>Item 1</li>
+				<li>Item 2</li>
+				<li>Item 3</li>
+			</ol>
+			
+			<h3 id="unordered-lists">Unordered Lists</h3>
+			<ul>
+				<li>Item 1</li>
+				<li>Item 2</li>
+				<li>Item 3</li>
+			</ul>
+
+			<h2 id="figures">Figures</h2>
+			<figure id="template-image">
+				<img src="./images/datalesson_fig2.png" alt="One of the images from the Formatting Research Data page.">
+				<figcaption><a href="/formatting_research_data.html#tasks"><strong class="ital">Figure 2 from the Formatting Data Research page.</strong></a></figcaption>
+			</figure>
+			
+			<h2 id="sidebar">Sidebar</h2>
+			<p>Here is the main content for the page.</p>
+			<aside>
+				<p>
+					Here is the content that will be in the sidebar.
+				</p>
+			</aside>
+			
+			<h2 id="fonts">Font Types</h2>
+			<p>Here is <strong class="bold">bold text.</strong></p>
+			<p>Here is <strong class="ital">italicized text.</strong></p>
+			<p>Here is <strong class="code">text emphasized for computers or software.</strong></p>
+			<p>
+				Here is <a href="./does_not_exist.html">link text for an unvisited link.</a>
+				(This link goes to a non-existent page to ensure that its color is representative of an unvisited link.)
+			</p>
+			<p>Here is <a href="./template.html">link text for a link you've visited.</a></p>
+			
+			<h2 id="navbar">Navbar</h2>
+			<p>
+				To add the page to the navbar, you will need to edit <a href="./js/script.js">./js/script.js</a>.
+				In the <strong class="code">addNav</strong> function, there is a constant variable called <strong class="code">pages</strong>.
+				After the last page, add a new line and add in the information for the new page in a similar fashion as before.
+				The <strong class="code">key</strong> is the text that will appear in the navigation bar, such as Template for this page.
+				If the page does not exist, you can set the value to <strong class="code">null</strong> or <strong class="code">[null, iconValue]</strong>,
+				where the <strong class="code">iconValue</strong> is the <a href="https://fontawesome.com/icons">FontAwesome</a> icon that will appear when the mouse hovers over the button.
+				If you don't want to specify an icon, make sure you set the value as <strong class="code">null</strong> or <strong class="code">null</strong>.
+			</p>
+		</div>
+	</body>
+</html>

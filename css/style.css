@@ -147,6 +147,11 @@ nav {
     backface-visibility: hidden;
 }
 
+.flip-box-text {
+    font-size: 18px;
+    font-weight: bold;
+}
+
 .flip-box-front {
     background-color: #6b1112;
     color: white;

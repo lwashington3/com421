@@ -7,14 +7,15 @@ function addNav(published_only){
 	const menu = document.querySelector("nav.top-level");
 	const pages = {
 		"Home": ["./index.html", "fa-house"],
-		"Topic": null,
+		"Topic": [null, "fa-lightbulb"],
 		"Research": ["./realistic_research.html", "fa-microscope"],
 		"Data": ["./formatting_research_data.html", "fa-calculator"],
 		"References": [null, "fa-book"],
 		"Style": [null, "fa-paintbrush"],
-		"Layout": null,
+		"Layout": [null, "fa-table-list"],
 		"Modality": [null, "fa-boxes-stacked"],
-		"Professionalization": null,
+		"Professionalization": [null, "fa-briefcase"],
+		"Template": ["./template.html", "fa-copy"],
 	};
 
 	const bar = document.createElement("div");
@@ -22,6 +23,7 @@ function addNav(published_only){
 	bar.setAttribute("class", "navbar");
 
 	const menuIcon = document.createElement("button");
+	menuIcon.id = "toggle";
 	menuIcon.className = "flip-box-front";
 	menuIcon.onclick = () => {
 		updateCSS(bar.hidden);
@@ -51,7 +53,6 @@ function addNav(published_only){
 		const box = document.createElement("button");
 		box.setAttribute("class", "flip-box nav-buttons");
 		box.style.width = `${100/pages.length}%`;
-		console.log(box.style.width);
 
 		const inner = document.createElement("div");
 		inner.setAttribute("class", "flip-box-inner");
@@ -59,8 +60,9 @@ function addNav(published_only){
 		const front = document.createElement("div");
 		front.setAttribute("class", "flip-box-front");
 
-		const text = document.createElement("h1");
-		text.innerHTML = page;
+		const text = document.createElement("p");
+		text.className = "flip-box-text";
+		text.innerText = page;
 
 		const back = document.createElement("div");
 		back.classList.add("flip-box-back", valid ? "valid" : "invalid");
@@ -84,7 +86,7 @@ function addNav(published_only){
 function addFigureNumbers(){
 	const captions = document.querySelectorAll("figcaption");
 	for(let i = 0; i < captions.length; i++){
-		captions[i].innerText = `Figure ${i+1}: ${captions[i].innerText}`;
+		captions[i].innerHTML = `Figure ${i+1}:\n${captions[i].innerHTML}`;
 	}
 }
 
@@ -93,7 +95,6 @@ function updateCSS(addSpace){
 		if(sheet.href === undefined || sheet.href == null){
 			return false;
 		}
-		console.log(sheet.href);
 		return sheet.href.endsWith("css/style.css")
 	})[0];
 	const rule = Array.from(stylesheet.cssRules).filter((styleRule) => styleRule.selectorText === ".main")[0];
