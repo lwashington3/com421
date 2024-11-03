@@ -26,8 +26,12 @@ function addNav(published_only){
 	menuIcon.id = "toggle";
 	menuIcon.className = "flip-box-front";
 	menuIcon.onclick = () => {
-		updateCSS(bar.hidden);
 		bar.hidden = !bar.hidden;
+		try{
+			updateCSS(!bar.hidden);
+		} catch(e){
+			console.error(`The following error has occurred because you are viewing the website through the raw HTML files instead of using a server: ${e}`);
+		}
 	};
 	const mIcon = document.createElement("i");
 	mIcon.setAttribute("class", "fa-solid fa-bars");
