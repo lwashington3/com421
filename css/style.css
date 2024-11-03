@@ -1,10 +1,40 @@
+/* region General CSS for the Body */
+body {
+    background-color: #333333;
+    color: whitesmoke
+}
+
+.main {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+}
+/* endregion */
+
+/* region Aside (Sidebar) */
+aside {
+    width: 40%;
+    padding-left: 0.5rem;
+    margin-left: 0.5rem;
+    float: right;
+    box-shadow: inset 5px 0 5px -5px #328cb6;
+    font-style: italic;
+    color: #328cb6;
+}
+
+aside > p {
+    margin: 0.5rem;
+}
+/* endregion */
+
+/* region Basic Text Formatting */
 .bold {
     font-weight: bold;
 }
 
 .emph {
     font-weight: bold;
-    color: #191970
+    color: #3939FF
 }
 
 .ital {
@@ -12,32 +42,84 @@
     font-weight: normal;
 }
 
-aside {
-    width: 40%;
-    padding-left: 0.5rem;
-    margin-left: 0.5rem;
-    float: right;
-    box-shadow: inset 5px 0 5px -5px #29627e;
+.code {
     font-style: italic;
+    font-weight: normal;
+}
+/* endregion */
+
+/* region Link colors */
+a:link {
+    color: dodgerblue;
+}
+
+a:visited {
+    color: mediumpurple;
+}
+
+a:hover {
     color: #29627e;
 }
 
-aside > p {
-    margin: 0.5rem;
+a:active {
+    color: #6b1112;
+}
+/* endregion */
+
+/* region Figure Border */
+figure {
+    border: 10px solid #6b1112;
+    background-color: #6b1112;
+    width: fit-content;
+}
+/* endregion */
+
+/* region Nav bar CSS */
+nav {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f100;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.navbar {
+    width: 100%;
+}
+
+.nav-buttons button {
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    float: left;
+}
+
+.nav-buttons:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.nav-buttons button:not(:last-child) {
+    border-right: none;
 }
 
 .flip-box {
     background-color: transparent;
     width: 180px;
     height: 80px;
-    border: 1px solid #f1f1f1;
+    /*border: 1px solid #f1f1f1;*/
     perspective: 1000px;
 }
+
 .flip-box-right {
     background-color: transparent;
     width: 350px;
     height: 80px;
-    border: 1px solid #f1f1f1;
+    /*border: 1px solid #f1f1f1;*/
     perspective: 1000px;
 }
 
@@ -81,64 +163,12 @@ aside > p {
 }
 
 .valid {
-    background-color: dimgray;
+    background-color: lightslategray;
 }
 
 .invalid {
     background-color: black;
 }
-
-.navbar {
-    width: 100%;
-}
-
-.nav-buttons button {
-    color: white; /* White text */
-    display: flex;
-    flex-wrap: wrap;
-    width: auto;
-    /*padding: 10px 24px; !* Some padding *!*/
-    float: left; /* Float the buttons side by side */
-}
-
-/* Clear floats (clearfix hack) */
-.nav-buttons:after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-.nav-buttons button:not(:last-child) {
-    border-right: none; /* Prevent double borders */
-}
-
-/* Add a background color on hover */
-.nav-buttons button:hover {
-    background-color: #3e8e41;
-}
-
-nav {
-    margin: 0;
-    padding: 0;
-    width: 200px;
-    background-color: #f1f1f1;
-    position: fixed;
-    height: 100%;
-    overflow: auto;
-}
-
-.main {
-    margin-left: 200px;
-    padding: 1px 16px;
-    height: 1000px;
-}
-
-figure {
-    margin: 10px;
-    background-color: #6b1112;
-    width: fit-content;
-}
-
 
 @media screen and (max-width: 700px) {
     nav {
@@ -156,4 +186,4 @@ figure {
         float: none;
     }
 }
-
+/* endregion */
