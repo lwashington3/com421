@@ -43,8 +43,9 @@ aside > p {
 }
 
 .code {
-    font-style: italic;
+    /*font-style: italic;*/
     font-weight: normal;
+    font-family: monospace;
 }
 /* endregion */
 
