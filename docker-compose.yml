@@ -2,10 +2,14 @@ name: com421
 
 services:
     base:
-        build: .
-        image: com421/washington-sustainable-project
+        image: python:3.12.5-alpine
         ports: 
             - "80:80"
+            - "443:443"
 #            - "127.0.0.1:80:80"
+#            - "127.0.0.1:443:443"
+        working_dir: /usr/src/app
+        entrypoint: ["python3", "main.py"]
+#        command: ["https"]
         volumes:
             - ./:/usr/src/app

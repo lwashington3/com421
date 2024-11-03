@@ -1,9 +1,7 @@
 function onLoad(published_only){
 	addNav(published_only);
-	console.log("Should be added");
 	addFigureNumbers();
 }
-
 
 function addNav(published_only){
 	const menu = document.querySelector("nav.top-level");
@@ -18,14 +16,26 @@ function addNav(published_only){
 		"Modality": [null, "fa-boxes-stacked"],
 		"Professionalization": null,
 	};
-	// const list = document.createElement("ul");
-	// list.setAttribute("class", "nav");
+
 	const bar = document.createElement("div");
+	bar.hidden = false;
 	bar.setAttribute("class", "navbar");
+
+	const menuIcon = document.createElement("button");
+	menuIcon.className = "flip-box-front";
+	menuIcon.onclick = () => {
+		updateCSS(bar.hidden);
+		bar.hidden = !bar.hidden;
+	};
+	const mIcon = document.createElement("i");
+	mIcon.setAttribute("class", "fa-solid fa-bars");
+	menuIcon.append(mIcon);
+	menu.append(menuIcon);
+
 	for (const page in pages) {
 		const info = pages[page];
 		let valid = !(info == null || info[0] == null);
-		if(published_only && valid){ continue; }
+		if(published_only && !valid){ continue; }
 		let url = "./placeholder.html";
 		let iconValue = "fa-x";
 		if(valid){
@@ -76,4 +86,16 @@ function addFigureNumbers(){
 	for(let i = 0; i < captions.length; i++){
 		captions[i].innerText = `Figure ${i+1}: ${captions[i].innerText}`;
 	}
+}
+
+function updateCSS(addSpace){
+	const stylesheet = Array.from(document.styleSheets).filter(function(sheet){
+		if(sheet.href === undefined || sheet.href == null){
+			return false;
+		}
+		console.log(sheet.href);
+		return sheet.href.endsWith("css/style.css")
+	})[0];
+	const rule = Array.from(stylesheet.cssRules).filter((styleRule) => styleRule.selectorText === ".main")[0];
+	rule.style.marginLeft = addSpace ? "200px" : "0px";
 }
